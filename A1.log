@@ -1,18 +1,3 @@
-INFO - user node0enl5svhx5lbe1kpy47glpev6o0 wants to do request
-INFO - user visits 2
-INFO - user visits 2025-12-18T14:27:49.375+0300
-INFO - Constructing dao
-INFO - getting instance
-INFO - Sucessfully created dataSource and entity manager
-INFO - getting entity manager
-INFO - releasing entity manager
-INFO - Constructing dao
-INFO - getting instance
-INFO - Constructing dao
-INFO - getting instance
-INFO - Getting object
-INFO - getting entity manager
-INFO - releasing entity manager
-INFO - Creating object
-INFO - getting entity manager
-INFO - releasing entity manager
+INFO - user node01777i3buvwx75ghra1n2kjgjy0 wants to do request
+INFO - user visits 3
+INFO - user visits 2025-12-21T17:43:22.646+0300

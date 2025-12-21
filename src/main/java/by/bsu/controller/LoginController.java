@@ -1,7 +1,10 @@
 package by.bsu.controller;
 
 import by.bsu.entities.User;
+import jakarta.servlet.http.HttpServletResponse;
+
 import org.thymeleaf.ITemplateEngine;
+import org.thymeleaf.context.WebContext;
 import org.thymeleaf.web.IWebExchange;
 import org.thymeleaf.web.servlet.IServletWebExchange;
 
@@ -24,6 +27,7 @@ public class LoginController implements IController {
     @Override
     public void process(IWebExchange webExchange, ITemplateEngine templateEngine, Writer writer) {
         try {
+            WebContext ctx = new WebContext(webExchange, webExchange.getLocale());
             String method = webExchange.getRequest().getMethod();
             
             if ("POST".equals(method)) {
@@ -34,18 +38,17 @@ public class LoginController implements IController {
                 User user = users.get(username);
                 if (user != null && user.getPassword().equals(password)) {
                     webExchange.getSession().setAttributeValue("user", user);
-                    IServletWebExchange test = (IServletWebExchange) webExchange;
-                    test.getResponce();
-                    webExchange.getResponse().sendRedirect(webExchange.getRequest().getContextPath() + "/pages/home");
+                    IServletWebExchange iswe = (IServletWebExchange) webExchange;
+                    HttpServletResponse responce = (HttpServletResponse) iswe.getNativeResponseObject();
+                    responce.sendRedirect(webExchange.getRequest().getRequestPath() + "/pages/home");
                     return;
                 } else {
-                    webExchange.getRequest().setAttribute("error", "Invalid username or password");
+                    webExchange.setAttributeValue("error", "Invalid username or password");
                 }
             }
             
             // Показать форму логина
-            templateEngine.process("login", webExchange.getRequest().getLocale(), 
-                                 webExchange, writer);
+            templateEngine.process("login", ctx, writer);
             
         } catch (Exception e) {
             throw new RuntimeException(e);

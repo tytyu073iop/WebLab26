@@ -8,5 +8,4 @@ import org.thymeleaf.web.IWebExchange;
 public interface IController {
 	  public void process(final IWebExchange webExchange, final ITemplateEngine templateEngine, final Writer writer)
 	            throws Exception;
-	  
 }

@@ -211,13 +211,13 @@
                     <span th:text="${session.user.username + ' (' + session.user.role + ')'}"></span>
                 </div>
                 <div class="auth-links">
-                    <a href="/pages/logout">Logout</a>
+                    <a href="pages/logout">Logout</a>
                 </div>
             </div>
             <div class="user-menu" th:if="${session.user == null}">
                 <div class="auth-links">
-                    <a href="/pages/login">Login</a>
-                    <a href="/pages/register">Register</a>
+                    <a href="pages/login">Login</a>
+                    <a href="pages/register">Register</a>
                 </div>
             </div>
         </div>
@@ -232,13 +232,13 @@
             
             <div class="login-section">
                 <h2>Login to Your Account</h2>
-                <form class="login-form" action="/pages/login" method="post">
+                <form class="login-form" action="pages/login" method="post">
                     <input type="text" name="username" placeholder="Username" required>
                     <input type="password" name="password" placeholder="Password" required>
                     <button type="submit">Login</button>
                 </form>
                 <div class="register-link">
-                    <p>Don't have an account? <a href="/pages/register">Register here</a></p>
+                    <p>Don't have an account? <a href="pages/register">Register here</a></p>
                 </div>
             </div>
         </div>
@@ -257,14 +257,14 @@
                     <div class="menu-item">
                         <h3><i class="fas fa-wallet"></i> Account Balance</h3>
                         <p>Check your current account balance</p>
-                        <a href="/pages/accountBalance">Access →</a>
+                        <a href="pages/accountBalance">Access →</a>
                     </div>
                     
                     <!-- Доступно пользователям и администраторам -->
                     <div class="menu-item" th:classappend="${session.user.role != 'USER' and session.user.role != 'ADMIN'} ? 'restricted'">
                         <h3><i class="fas fa-calculator"></i> Payment Summary</h3>
                         <p>View your payment history and summaries</p>
-                        <a href="/pages/sumPayments">Access →</a>
+                        <a href="pages/sumPayments">Access →</a>
                         <div class="role-required" th:if="${session.user.role != 'USER' and session.user.role != 'ADMIN'}">
                             Requires USER or ADMIN role
                         </div>
@@ -274,7 +274,7 @@
                     <div class="menu-item" th:classappend="${session.user.role != 'ADMIN'} ? 'restricted'">
                         <h3><i class="fas fa-users"></i> Client Accounts</h3>
                         <p>Manage all client accounts (Admin only)</p>
-                        <a href="/pages/accounts">Access →</a>
+                        <a href="pages/accounts">Access →</a>
                         <div class="role-required" th:if="${session.user.role != 'ADMIN'}">
                             Requires ADMIN role
                         </div>
@@ -283,7 +283,7 @@
                     <div class="menu-item" th:classappend="${session.user.role != 'ADMIN'} ? 'restricted'">
                         <h3><i class="fas fa-exchange-alt"></i> Make a Payment</h3>
                         <p>Process payments between accounts</p>
-                        <a href="/pages/makeAPay">Access →</a>
+                        <a href="pages/makeAPay">Access →</a>
                         <div class="role-required" th:if="${session.user.role != 'ADMIN'}">
                             Requires ADMIN role
                         </div>
@@ -292,7 +292,7 @@
                     <div class="menu-item" th:classappend="${session.user.role != 'ADMIN'} ? 'restricted'">
                         <h3><i class="fas fa-ban"></i> Card Management</h3>
                         <p>Block or activate client cards</p>
-                        <a href="/pages/deactivateCard">Access →</a>
+                        <a href="pages/deactivateCard">Access →</a>
                         <div class="role-required" th:if="${session.user.role != 'ADMIN'}">
                             Requires ADMIN role
                         </div>
