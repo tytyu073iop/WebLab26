@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - WebLab25 Bank</title>
+    <style>
+        /* Стили из home.html */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-section">
+            <h2>Login</h2>
+            <div th:if="${error}" style="color: red; margin-bottom: 15px;">
+                [[${error}]]
+            </div>
+            <form class="login-form" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div class="register-link">
+                <p>Don't have an account? <a href="/pages/register">Register here</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

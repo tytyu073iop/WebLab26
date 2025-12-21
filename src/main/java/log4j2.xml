@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+<Appenders>
+<File name="A1" fileName="A1.log" append="false">
+<PatternLayout pattern="%level - %m%n"/>
+</File>
+<Console name="STDOUT" target="SYSTEM_OUT">
+<PatternLayout pattern="%level - %m%n"/>
+</Console>
+</Appenders>
+<Loggers>
+<Logger name="by.bsu" level="debug" additivity="false">
+<AppenderRef ref="A1"/>
+</Logger>
+<Root level="error">
+<AppenderRef ref="STDOUT"/>
+</Root>
+</Loggers>
+</Configuration>

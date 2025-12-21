@@ -1,0 +1,28 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="" method="GET">
+        <label for="clientId">Client ID:</label><br>
+        <input type="number" id="clientId" name="ClientId" 
+               placeholder="Enter client ID" 
+               required>       
+        <br>
+        <label for="dateFrom">Date from:</label>
+        <input type="date" id="dateFrom" name="dateFrom" required>
+        <br>
+        <label for="dateTo">Date to:</label>
+        <input type="date" id="dateTo" name="dateTo" required>
+        
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </form>
+    <div th:if="${sum != null}">
+        <p>sum:</p>
+        <p th:text="${sum}">0</p>
+    </div>
+
+    <a href="../index.html" th:href="@{/}">Return to home</a>
+    </body>
+</html>

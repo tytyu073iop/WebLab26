@@ -1,0 +1,332 @@
+<html>
+    <head>
+        <style>
+            /* Reset and base styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                color: #333;
+            }
+            
+            /* Main container */
+            .container {
+                width: 100%;
+                max-width: 500px;
+                animation: slideIn 0.5s ease-out;
+            }
+            
+            /* Warning header */
+            .warning-header {
+                background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+                color: white;
+                padding: 25px;
+                border-radius: 12px 12px 0 0;
+                text-align: center;
+                box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+            }
+            
+            .warning-icon {
+                font-size: 48px;
+                margin-bottom: 15px;
+                display: block;
+                animation: pulse 2s infinite;
+            }
+            
+            .warning-title {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+            
+            .warning-subtitle {
+                font-size: 1rem;
+                opacity: 0.9;
+                font-weight: 400;
+            }
+            
+            /* Form card */
+            .form-card {
+                background: white;
+                padding: 40px;
+                border-radius: 0 0 12px 12px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            }
+            
+            /* Form styling */
+            form {
+                width: 100%;
+            }
+            
+            .form-group {
+                margin-bottom: 30px;
+            }
+            
+            label {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 12px;
+                color: #2c3e50;
+                font-size: 16px;
+            }
+            
+            .input-wrapper {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+            
+            input[type="number"] {
+                width: 100%;
+                padding: 16px 20px 16px 50px;
+                border: 2px solid #e1e8ed;
+                border-radius: 8px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                background-color: #f8f9fa;
+                color: #333;
+                font-family: 'Courier New', monospace;
+                letter-spacing: 1px;
+            }
+            
+            .card-icon {
+                position: absolute;
+                left: 18px;
+                color: #7f8c8d;
+                font-size: 20px;
+            }
+            
+            input[type="number"]:focus {
+                outline: none;
+                border-color: #e74c3c;
+                background-color: white;
+                box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+            }
+            
+            input[type="number"]::placeholder {
+                color: #95a5a6;
+                font-family: sans-serif;
+                letter-spacing: normal;
+            }
+            
+            /* Button styling */
+            .button-group {
+                display: flex;
+                gap: 15px;
+                margin-top: 30px;
+            }
+            
+            input[type="submit"], input[type="reset"] {
+                flex: 1;
+                padding: 16px 24px;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            
+            input[type="submit"] {
+                background: linear-gradient(135deg, #e74c3c, #c0392b);
+                color: white;
+            }
+            
+            input[type="submit"]:hover {
+                background: linear-gradient(135deg, #c0392b, #a93226);
+                transform: translateY(-3px);
+                box-shadow: 0 7px 14px rgba(231, 76, 60, 0.3);
+            }
+            
+            input[type="reset"] {
+                background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+                color: white;
+                border: 2px solid #bdc3c7;
+            }
+            
+            input[type="reset"]:hover {
+                background: linear-gradient(135deg, #7f8c8d, #6c7b7d);
+                transform: translateY(-3px);
+                box-shadow: 0 7px 14px rgba(149, 165, 166, 0.3);
+            }
+            
+            /* Warning text */
+            .warning-text {
+                background-color: #fff3cd;
+                border-left: 4px solid #ffc107;
+                padding: 15px;
+                margin-top: 25px;
+                border-radius: 4px;
+                font-size: 14px;
+                color: #856404;
+            }
+            
+            .warning-text strong {
+                display: block;
+                margin-bottom: 5px;
+            }
+            
+            /* Result messages */
+            .result-message {
+                text-align: center;
+                padding: 20px;
+                border-radius: 8px;
+                margin-top: 25px;
+                font-weight: 600;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease;
+                display: none;
+            }
+            
+            .success-message {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+                display: block !important;
+            }
+            
+            .failure-message {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+                display: block !important;
+            }
+            
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .container {
+                    max-width: 100%;
+                }
+                
+                .form-card {
+                    padding: 30px 20px;
+                }
+                
+                .warning-header {
+                    padding: 20px 15px;
+                }
+                
+                .warning-title {
+                    font-size: 1.5rem;
+                }
+                
+                .button-group {
+                    flex-direction: column;
+                }
+                
+                input[type="submit"], input[type="reset"] {
+                    width: 100%;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                body {
+                    padding: 10px;
+                }
+                
+                input[type="number"] {
+                    padding: 14px 15px 14px 45px;
+                    font-size: 15px;
+                }
+            }
+            
+            /* Animations */
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+            
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="warning-header">
+                <i class="warning-icon fas fa-exclamation-triangle"></i>
+                <h2 class="warning-title">Card Deactivation</h2>
+                <p class="warning-subtitle">This action cannot be undone</p>
+            </div>
+            
+            <div class="form-card">
+                <form action="" method="post" id="deactivationForm">
+                    <div class="form-group">
+                        <label for="cardNum">
+                            <i class="fas fa-credit-card"></i>
+                            Card Number to Deactivate:
+                        </label>
+                        <div class="input-wrapper">
+                            <i class="card-icon fas fa-credit-card"></i>
+                            <input type="number" id="cardNum" name="CardNum" 
+                                   placeholder="Enter 16-digit card number" 
+                                   required
+                                   min="1000000000000000"
+                                   max="9999999999999999"
+                                   maxlength="16">
+                        </div>
+                    </div>
+                    
+                    <div class="button-group">
+                        <input type="submit" value="Deactivate Card" id="submitBtn">
+                        <input type="reset" value="Cancel" id="resetBtn">
+                    </div>
+                </form>
+                
+                <!-- Success Message -->
+                <div class="result-message success-message" 
+                     th:if="${success}" 
+                     th:classappend="${success} ? 'success-message' : ''">
+                    <i class="fas fa-check-circle"></i>
+                    <span th:if="${success}">Card successfully deactivated</span>
+                </div>
+                
+                <!-- Failure Message -->
+                <div class="result-message failure-message" 
+                     th:unless="${success}" 
+                     th:classappend="${success} == false ? 'failure-message' : ''"
+                     th:if="${success != null}">
+                    <i class="fas fa-times-circle"></i>
+                    <span th:unless="${success}">Card deactivation failed. Please try again or contact support.</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
