@@ -20,7 +20,7 @@ public class RegisterController implements IController {
             
             if ("POST".equals(method)) {
                 IServletWebExchange iswe = (IServletWebExchange) webExchange;
-            HttpServletResponse responce = (HttpServletResponse) iswe.getNativeResponseObject();
+                HttpServletResponse responce = (HttpServletResponse) iswe.getNativeResponseObject();
 
                 // Обработка регистрации
                 String username = webExchange.getRequest().getParameterValue("username");
@@ -32,7 +32,8 @@ public class RegisterController implements IController {
                 
                 // Сохраняем пользователя в сессии
                 webExchange.getSession().setAttributeValue("user", newUser);
-                responce.sendRedirect(webExchange.getRequest().getRequestPath() + "/pages/home");
+                System.out.println("Path");
+                responce.sendRedirect("/DemoThymeleaf/pages/home");
                 return;
             }
             

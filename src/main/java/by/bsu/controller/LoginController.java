@@ -40,7 +40,7 @@ public class LoginController implements IController {
                     webExchange.getSession().setAttributeValue("user", user);
                     IServletWebExchange iswe = (IServletWebExchange) webExchange;
                     HttpServletResponse responce = (HttpServletResponse) iswe.getNativeResponseObject();
-                    responce.sendRedirect(webExchange.getRequest().getRequestPath() + "/pages/home");
+                    responce.sendRedirect("/DemoThymeleaf" + "/pages/home");
                     return;
                 } else {
                     webExchange.setAttributeValue("error", "Invalid username or password");

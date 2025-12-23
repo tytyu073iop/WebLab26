@@ -1,3 +1,61 @@
-INFO - user node01777i3buvwx75ghra1n2kjgjy0 wants to do request
-INFO - user visits 3
-INFO - user visits 2025-12-21T17:43:22.646+0300
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 22
+INFO - user visits 2025-12-23T16:26:36.849+0300
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 23
+INFO - user visits 2025-12-23T16:26:41.657+0300
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 24
+INFO - user visits 2025-12-23T16:26:41.674+0300
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 25
+INFO - user visits 2025-12-23T16:26:51.132+0300
+INFO - Get request sends website
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 26
+INFO - user visits 2025-12-23T16:26:57.010+0300
+INFO - Constructing dao
+INFO - getting instance
+INFO - Sucessfully created dataSource and entity manager
+INFO - Getting object
+INFO - getting entity manager
+INFO - releasing entity manager
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 27
+INFO - user visits 2025-12-23T16:27:11.463+0300
+INFO - Constructing dao
+INFO - getting instance
+INFO - Getting object
+INFO - getting entity manager
+INFO - releasing entity manager
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 28
+INFO - user visits 2025-12-23T16:27:14.142+0300
+INFO - Constructing dao
+INFO - getting instance
+INFO - Getting object
+INFO - getting entity manager
+INFO - releasing entity manager
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 29
+INFO - user visits 2025-12-23T16:27:18.592+0300
+INFO - Constructing dao
+INFO - getting instance
+INFO - Getting object
+INFO - getting entity manager
+INFO - releasing entity manager
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 30
+INFO - user visits 2025-12-23T16:27:20.321+0300
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 31
+INFO - user visits 2025-12-23T16:27:24.481+0300
+INFO - Get request sends website
+INFO - user node01miatmfkbq5yq1fi0xfx0m55cr0 wants to do request
+INFO - user visits 32
+INFO - user visits 2025-12-23T16:27:36.544+0300
+INFO - Constructing dao
+INFO - getting instance
+INFO - getting client payments sum
+INFO - getting entity manager
+INFO - releasing entity manager

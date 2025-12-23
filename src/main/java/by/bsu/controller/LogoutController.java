@@ -23,7 +23,7 @@ public class LogoutController implements IController {
             session.invalidate();
             
             // Перенаправляем на домашнюю страницу
-            responce.sendRedirect(webExchange.getRequest().getRequestPath() + "/pages/home");
+            responce.sendRedirect("/DemoThymeleaf" + "/pages/home");
             
         } catch (Exception e) {
             throw new RuntimeException(e);
